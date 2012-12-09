@@ -49,7 +49,7 @@ def final_freqs(outcomes):
   freqs = []
   for place in outcomesdf.columns:
     freqs.append(outcomesdf[place].value_counts()/float(len(outcomes)))
-  freqdf = DataFrame(freqs)
+  freqdf = DataFrame(freqs, index=outcomesdf.columns)
   return freqdf, outcomesdf
 
 def run_trial(semifinal, team_stats):
